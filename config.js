@@ -42,6 +42,9 @@ export default {
     // 每次请求延迟时间，以 ms 计算
     delay: 0,
 
+    // 开启下载功能
+    download: false,
+
 
     // log4js
     log4js: {

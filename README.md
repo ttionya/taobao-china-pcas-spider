@@ -48,3 +48,7 @@
 - [Administrative-divisions-of-China](https://github.com/modood/Administrative-divisions-of-China)
 - [国家统计局](http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/)
 - [民政部](http://www.mca.gov.cn/article/sj/tjbz/a/)
+
+### 许可证
+
+MIT

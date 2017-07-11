@@ -7,7 +7,7 @@ export default {
         method: 'GET',
 
         // 待爬取的 URL，带参数的用 {{id}} 替换
-        url: '{{id}}',
+        url: 'https://lsp.wuliu.taobao.com/locationservice/addr/output_address_town_array.do?l1={{id1}}&l2={{id2}}&l3={{id3}}&lang=zh-S&callback=jsonp',
 
         // 查询参数，常用于 GET
         // a=1&b=2
@@ -29,7 +29,7 @@ export default {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Encoding': 'gzip, deflate, sdch',
         'Cookie': '',
-        'Host': '',
+        'Host': 'lsp.wuliu.taobao.com',
         'Referer': '',
         'DNT': 1,
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36'
@@ -54,6 +54,7 @@ export default {
 
         // 保存到文件
         // 置空表示不保存，放在 logs 文件夹里
-        logFile: 'logs/logs.log'
+        // logFile: 'logs/logs.log'
+        logFile: ''
     }
 }

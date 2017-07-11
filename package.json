@@ -1,7 +1,7 @@
 {
-  "name": "template-spider",
+  "name": "taobao-china-pcas-spider",
   "version": "1.0.0",
-  "description": "简单的爬虫模板，适用于抓取一些简单的页面链接、进行下载等。",
+  "description": "从淘宝爬取全中国省、市、县、街道数据",
   "main": "index.js",
   "scripts": {
     "start": "babel-node --expose-gc index.js"
@@ -9,24 +9,16 @@
   "keywords": [
     "spider"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ttionya/Template-Spider.git"
-  },
   "author": "ttionya",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ttionya/Template-Spider/issues"
-  },
-  "homepage": "https://github.com/ttionya/Template-Spider#readme",
   "dependencies": {
-    "async": "^2.4.0",
+    "async": "^2.5.0",
     "babel-cli": "^6.24.0",
     "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.5.0",
+    "babel-preset-env": "^1.6.0",
     "cheerio": "^0.22.0",
     "download": "^6.1.0",
-    "log4js": "^1.1.0",
+    "log4js": "^1.0.0",
     "superagent": "^3.5.0"
   }
 }

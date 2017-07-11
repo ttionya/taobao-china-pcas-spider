@@ -39,24 +39,42 @@ export default array => {
             // 并发数计数器 +1s
             concurrencyCount++;
 
-            superAgent(config.request.method, config.request.url.replace('{{id}}', id.toString()))
+            superAgent(config.request.method, config.request.url.replace('{{id1}}', id[0].toString()).replace('{{id2}}', id[1].toString()).replace('{{id3}}', id[2].toString()))
                 .set(headers)
+                .buffer(true) // must
                 .redirects(config.request.redirects)
                 .query(config.request.query)
                 .send(config.request.send)
                 .end(async (err, result) => {
                     const log = logger(id.toString()); // 日志
 
+                    let newArray = [];
+
                     if (err) {
                         log.error(err);
                     }
                     else {
-                        let $ = cheerio.load(result.text);
+                        // let $ = cheerio.load(result.text);
 
-                        log.info(result);
+                        log.debug(result.text);
 
-                        // TODO
-                        // 这里做些什么
+                        // main
+                        let jsonp = obj => {
+                            let resultArray = obj.result;
+
+                            for (let item of resultArray) {
+                                newArray.push({
+                                    id: item[0],
+                                    name: item[1],
+                                    sub: []
+                                });
+                            }
+
+                            log.info(newArray);
+                        };
+
+                        // exec
+                        eval(result.text);
 
                         // 是否开启下载功能
                         if (config.download) {
@@ -65,13 +83,12 @@ export default array => {
                         }
                     }
 
-
                     // 继续
                     setTimeout(function() {
                         // 并发数计数器反向 +1s
                         concurrencyCount--;
 
-                        callback(null);
+                        callback(null, newArray);
 
                     }, config.delay);
                 });
@@ -81,7 +98,7 @@ export default array => {
                 reject(err);
             }
             else {
-                resolve(result);
+                resolve(result[0]);
             }
         });
     });

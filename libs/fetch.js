@@ -46,7 +46,7 @@ export default array => {
                 .query(config.request.query)
                 .send(config.request.send)
                 .end(async (err, result) => {
-                    const log = logger(id.toString()); // 日志
+                    const log = logger.getLogger(id.toString()); // 日志
 
                     let newArray = [];
 

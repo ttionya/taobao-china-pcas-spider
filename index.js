@@ -1,4 +1,3 @@
-import "babel-polyfill";
 import fs from 'fs';
 import superAgent from 'superagent';
 // import cheerio from 'cheerio';
@@ -68,7 +67,7 @@ superAgent(config.request.method, 'https://g.alicdn.com/vip/address/6.0.5/index-
     .query(config.request.query)
     .send(config.request.send)
     .end(async (err, result) => {
-        const log = logger('省市县信息'); // 日志
+        const log = logger.getLogger('省市县信息'); // 日志
 
         if (err) {
             log.error(err);

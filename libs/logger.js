@@ -2,34 +2,38 @@ import log4js from 'log4js';
 import config from '../config';
 
 
-export default name => {
+export default (() => {
     "use strict";
 
     // 配置项
     let logConfig = {
-        appenders: [{
-            type: 'console'
-        }],
-        replaceConsole: true
+        appenders: {
+            console: {
+                type: 'console'
+            }
+        },
+        categories: {
+            default: {
+                appenders: ['console'],
+                level: config.log4js.logLevel // 设置日志等级
+            }
+        }
     };
 
     // 保存到文件
-    config.log4js.logFile && logConfig.appenders.push({
-        type: 'file',
-        filename: config.log4js.logFile,
-        maxLogSize: 1024,
-        backups:4,
-        category: name
-    });
+    if (config.log4js.logFile) {
+        logConfig.appenders.file = {
+            type: 'file',
+            filename: config.log4js.logFile,
+            maxLogSize: 512 * 1024 * 1024, // 512M
+            backups: 4
+        };
+
+        logConfig.categories.default.appenders.push('file');
+    }
 
     // 应用配置文件
     log4js.configure(logConfig);
 
-
-    let log = log4js.getLogger(name);
-
-    // 设置日志等级
-    log.setLevel(config.log4js.logLevel);
-
-    return log;
-};
+    return log4js;
+})();

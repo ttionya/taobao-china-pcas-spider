@@ -1,6 +1,6 @@
 {
   "name": "taobao-china-pcas-spider",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "从淘宝爬取全中国省、市、县、街道数据",
   "main": "index.js",
   "scripts": {
@@ -12,13 +12,15 @@
   "author": "ttionya",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.5.0",
-    "babel-cli": "^6.24.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "cheerio": "^0.22.0",
-    "download": "^6.1.0",
-    "log4js": "^1.0.0",
-    "superagent": "^3.5.0"
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "async": "^2.6.0",
+    "cheerio": "^1.0.0-rc.0",
+    "download": "^7.0.0",
+    "log4js": "^3.0.0",
+    "superagent": "^4.0.0-beta.0"
   }
 }

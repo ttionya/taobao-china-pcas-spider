@@ -55,7 +55,7 @@ for (let key in configHeaders) {
 }
 
 // 获得信息
-superAgent(config.request.method, 'https://g.alicdn.com/vip/address/6.0.5/index-min.js')
+superAgent(config.request.method, 'https://g.alicdn.com/vip/address/6.1.1/index-min.js')
     .set(headers)
     .set({
         'Host': 'g.alicdn.com',

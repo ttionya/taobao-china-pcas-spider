@@ -2,7 +2,7 @@
 
 从淘宝爬取全中国省、市、县、街道数据。
 
-**爬取时间：2017.11.06**
+**爬取时间：2018.10.16**
 
 ### 数据结构
 
@@ -40,8 +40,10 @@
 ```
 
 ### 地址：
-- [https://g.alicdn.com/vip/address/6.0.5/index-min.js](https://g.alicdn.com/vip/address/6.0.5/index-min.js)
+- [https://g.alicdn.com/vip/address/6.1.1/index-min.js](https://g.alicdn.com/vip/address/6.1.1/index-min.js)
 - [https://lsp.wuliu.taobao.com/locationservice/addr/output_address_town_array.do?l1=110000&l2=110100&l3=110101&lang=zh-S&callback=jsonp7524](https://lsp.wuliu.taobao.com/locationservice/addr/output_address_town_array.do?l1=110000&l2=110100&l3=110101&lang=zh-S&callback=jsonp7524)
+
+发现现在淘宝地址使用[这个](https://division-data.alicdn.com/simple/addr_4_1111_1_0.js)地址获得国、省、市、县数据，后续可以修改。
 
 ### 其他参考
 
